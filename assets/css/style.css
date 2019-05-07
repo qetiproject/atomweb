@@ -141,7 +141,7 @@ header {
     opacity: 0;
 }
 header.is-visible {
-	animation: fadeInRight 2s forwards;
+	animation: fadeInRight 1.5s forwards;
 }
 a.logo path {
 	fill: #000;
@@ -185,7 +185,7 @@ a.logo path {
 }
 .hero_content p.is-visible {
 	opacity: 0;
-	animation: zoom-back  10s .5s cubic-bezier(0,0,0,1) forwards;
+	animation: zoom-back  3s .1.5s cubic-bezier(0,0,0,1) forwards;
 }
 .hero_title {
 	font-size: 40px;
@@ -193,23 +193,23 @@ a.logo path {
 }
 .hero_title.is-visible span {
 	opacity: 0;
-	animation: no-transform linear 4s forwards;
+	animation: no-transform linear 1.5s forwards;
 }
 .hero_title.is-visible span:nth-child(1) {
-	animation-delay: 0.8s; 
+	animation-delay: 0.5s; 
 }
 .hero_title.is-visible span:nth-child(2) { 
-	animation-delay: 3s; 
+	animation-delay: 1.3s; 
 }
 .hero_title.is-visible span:nth-child(3) {
-	animation-delay: 3s; 
+	animation-delay: 1.3s; 
 }
 .hero_title.is-visible span:nth-child(4) { 
-	animation-delay: 2.5s;
+	animation-delay: 1s;
 }
 .hero_content.is-visible p {
 	font-size: 30px;
-	animation-delay: 4s;
+	animation-delay: 2s;
 }
 /*hero end*/
 /*services*/
@@ -224,7 +224,7 @@ a.logo path {
 	text-align: center;
 }
 .title.is-visible, .main_pic.is-visible {
-	animation: fade_down 2s forwards;
+	animation: fade_down 1s forwards;
 }
 .title:hover, .services_content_title:hover {
 	color: #B8EDF8;
@@ -249,7 +249,7 @@ a.logo path {
 	padding-top: 60px;
 }
 .services_menu.is-visible, .contact_form.is-visible  {
-	animation: fadeInRight 2s forwards;
+	animation: fadeInRight 1s forwards;
 }
 .services_content {
     width: calc(25% - 10px);
@@ -298,7 +298,7 @@ a.logo path {
 	margin: 50px 0;
 }
 .portfolio_content.is-visible {
-	animation: fadeInUp 2s forwards;
+	animation: fadeInUp 1.5s forwards;
 }
 .portfolio_content_img {
 	width: calc(33% - 25px);
@@ -342,7 +342,7 @@ a.logo path {
 	background: #F1F1F1;
 }
 .aboutme.is-visible {
-	animation: fadeInLeft 2s forwards;
+	animation: fadeInLeft 1.5s forwards;
 }
 .about {
 	display: flex;
@@ -432,7 +432,7 @@ input.send{
 input.send:hover{
 	cursor: pointer;
 	color: #666;
-	animation: fadeIn .5s forwards;
+	animation: fadeIn .3s forwards;
 }
 .modal {
 	display: none;
@@ -449,7 +449,7 @@ input.send:hover{
     top: 0;
     bottom: 0;
     background-color: #B8EDF8;
-    animation: fadeIn .5s forwards;
+    animation: fadeIn .3s forwards;
 }
 /*contact end*/
 /*footer*/
@@ -581,9 +581,10 @@ footer img{
 		justify-content: center;
 		color: #fff;
 		border: 2px solid #B8EDF8;
+		cursor: pointer;
 		outline: none;
 		padding: 5px;
-		cursor: pointer;
+		animation: fadeInRight 1.5s forwards;
 	}
 	.navbar-toggler span, .navbar-toggler span::before, .navbar-toggler span::after {
 		content: '';
@@ -610,9 +611,6 @@ footer img{
 		transform: translateY(-3px) scale(0.75) rotate(-45deg); 
 	}
 	/*toggler end*/
-	nav {
-		transition: top .100s ease-in;
-	}
 	nav.open {
 		width: 100%;
 		height: calc(100vh - 100px);
@@ -622,7 +620,7 @@ footer img{
 		top: 100px;
 		left: 0;
 		z-index: 3;
-		transition: top .5s ease-out;
+		animation: fadeInLeft 1.5s forwards;
 	}
 	.open .header_navigation {
 		width: 100%;
