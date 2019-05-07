@@ -37,11 +37,11 @@
 		</a>
 		<nav id="menu">
 			<ul id="header-navigation" class="header_navigation">
-				<li><a href="index.html" target="_balnk">მთავარი</a></li>
-				<li><a href="#services" target="_balnk">რას ვაკეთებ</a></li>
-				<li><a href="#portfolio" target="_balnk">ნამუშევრები</a></li>
-				<li><a href="#aboutme" target="_balnk">ჩემ შესახებ</a></li>
-				<li><a href="#contact" target="_balnk">კონტაქტი</a></li>
+				<li><a href="index.html">მთავარი</a></li>
+				<li><a href="#services">რას ვაკეთებ</a></li>
+				<li><a href="#portfolio">ნამუშევრები</a></li>
+				<li><a href="#aboutme">ჩემ შესახებ</a></li>
+				<li><a href="#contact">კონტაქტი</a></li>
 			</ul>
 		</nav>
 		<div class="navbar-toggler">
@@ -54,7 +54,7 @@
 		<img class="main_pic show-on-scroll" src="assets/images/mainPic.png" alt="mainPic" title="mainPic">
 		<div class="hero_content show-on-scroll">
 			<h1 class="hero_title show-on-scroll"><span>ვებ</span> <span>დიზაინი</span> <span>და</span> <span>პროგრამირება</span></h1>
-			<p class="show-on-scroll">ქეთი ხეცურიანი</p>
+			<!-- <p class="show-on-scroll">ქეთი ხეცურიანი</p> -->
 		</div>
 	</section>
 	<!-- hero section end -->
@@ -176,13 +176,13 @@
 	<section id="contact" class="contact">
 		<h2 class="title show-on-scroll">კონტაქტი</h2>
 		<div class="container">
-			<form class="contact_form show-on-scroll" action="#!" method="post">
-				<input type="text" name="user_name" placeholder="სახელი">
-				<input type="email" name="user_mail" placeholder="ელ-ფოსტა">
+			<form class="contact_form show-on-scroll" name="contact_form" method="post">
+				<input type="text" name="user_name" placeholder="სახელი" required>
+				<input type="email" name="user_mail" placeholder="ელ-ფოსტა" required>
 				<textarea cols="22" rows="6" placeholder="შეტყობინება"></textarea>
 				<div class="send_info">
 					<h3 class="send_info_title">კითხვებისთვის გამოიყენეთ ფორმა</h3>
-					<a id="myBtn" class="send">გაგზავნა</a>
+					<input type="submit" id="myBtn" class="send" value="გაგზავნა">
 				</div>
 				<!-- The Modal -->
 				<div id="myModal" class="modal">
