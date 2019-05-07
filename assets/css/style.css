@@ -8,13 +8,11 @@
 }
 @font-face {
 	font-family: 'icomoon';
-	src:  url('../fonts/icomoon//icomoon.eot?k14cbl');
-	src:  url('../fonts/icomoon//icomoon.eot?k14cbl#iefix') format('embedded-opentype'),
-	url('../fonts/icomoon/icomoon.ttf?k14cbl') format('truetype'),
-	url('../fonts/icomoon/icomoon.woff?k14cbl') format('woff'),
-	url('../fonts/icomoon/icomoon.svg?k14cbl#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
+	src:  url('../fonts/icomoon//icomoon.ttf');
+}
+::placeholder {
+	color: #989898;
+	font-size: 14px;
 }
 * {	
 	padding: 0;
@@ -27,8 +25,8 @@ html{
 	scroll-behavior: smooth;
 }
 body {
-	background-color: #fff;
 	font-family: nino_mkhedruli;
+	background-color: #fff;
 }
 ul {
 	display: flex;
@@ -41,11 +39,109 @@ a {
 	color: #000;
 	font-size: 20px;
 }
+/*animations - keyframes*/
+@keyframes fadeInRight {
+	0% {
+		opacity: 0;
+		transform: translateX(50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes zoom-back {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateZ(0) scale(1.2);
+            transform: translateZ(0) scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateZ(-30em);
+            transform: translateZ(-30em);
+  }
+}
+@keyframes fade_down {
+  0% {
+    opacity: 0;
+    transform: translateY(-4em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes anchor-underline {
+  0%, 10% {
+    left: 0;
+    right: 100%;
+  }
+  40%, 60% {
+    left: 0;
+    right: 0;
+  }
+  90%, 100% {
+    left: 100%;
+    right: 0;
+  }
+}
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes no-transform {
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+@keyframes btnEntrance { 
+	from {
+		opacity: 0;
+		transform: scale3d(0.3, 0.3, 0.3);
+	}
+	to {
+		opacity: 1;
+	}    
+} 
+@keyframes btnExit {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		transform: scale3d(0.3, 0.3, 0.3);
+	}
+} 
+/*animations - keyframes end*/
+/*header*/
 header {
+	height: 100px;
 	display: flex;
 	justify-content: space-between;
     align-items: center;
-	height: 100px;
+    opacity: 0;
+}
+header.is-visible {
+	animation: fadeInRight 2s forwards;
 }
 a.logo path {
 	fill: #000;
@@ -54,19 +150,20 @@ a.logo path {
 	display: none;
 }
 .header_navigation {
+	width: 625px;
 	display: flex;
 	justify-content: space-between;
-	width: 625px;
 }
 .header_navigation a:hover {
 	color: #B8EDF8;
 } 
+/*header ends*/
 /*hero*/
 .hero {
-	display: flex;
-	flex-direction: column;
 	width: 100%;
 	height: calc(100vh - 100px);
+	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
@@ -78,6 +175,7 @@ a.logo path {
 	left: 0;
 	z-index: -1;
 	object-fit: cover;
+	animation-delay: .5s;
 }
 .hero_content {
 	display: flex;
@@ -85,12 +183,33 @@ a.logo path {
 	align-items: center;
 	color: #fff;
 }
-.hero_content p {
-	font-size: 30px;
+.hero_content p.is-visible {
+	opacity: 0;
+	animation: zoom-back  10s .5s cubic-bezier(0,0,0,1) forwards;
 }
 .hero_title {
 	font-size: 40px;
 	line-height: 40px;
+}
+.hero_title.is-visible span {
+	opacity: 0;
+	animation: no-transform linear 4s forwards;
+}
+.hero_title.is-visible span:nth-child(1) {
+	animation-delay: 0.8s; 
+}
+.hero_title.is-visible span:nth-child(2) { 
+	animation-delay: 3s; 
+}
+.hero_title.is-visible span:nth-child(3) {
+	animation-delay: 3s; 
+}
+.hero_title.is-visible span:nth-child(4) { 
+	animation-delay: 2.5s;
+}
+.hero_content.is-visible p {
+	font-size: 30px;
+	animation-delay: 4s;
 }
 /*hero end*/
 /*services*/
@@ -103,7 +222,9 @@ a.logo path {
 .title {
 	position: relative;
 	text-align: center;
-	animation: fadeIn .5s forwards;
+}
+.title.is-visible, .main_pic.is-visible {
+	animation: fade_down 2s forwards;
 }
 .title:hover, .services_content_title:hover {
 	color: #B8EDF8;
@@ -112,29 +233,30 @@ a.logo path {
 	color: #BADC58;
 }
 .title:after {
-    content: '';
-    display: block;
-    position: absolute;
-    content: '';
-    height: 1px;
-    margin: 10px auto 0;
-    left: 0;
-    right: 0;
-    width: 93px;
-    background: #333;
-    transition: 0.5s;
+	content: '';
+	display: block;
+	width: 93px;
+	height: 1px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	background: #333;
+	margin: 10px auto 0;
 }
 .services_menu {
 	display: flex;
 	flex-wrap: wrap;
 	padding-top: 60px;
 }
+.services_menu.is-visible, .contact_form.is-visible  {
+	animation: fadeInRight 2s forwards;
+}
 .services_content {
+    width: calc(25% - 10px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: calc(25% - 10px);
     margin: 4px;
     padding: 30px 0 8px;
     border: 1px solid transparent;
@@ -143,21 +265,23 @@ a.logo path {
 	text-align: center;
 }
 .services_content_img {
-	position: relative;
 	width: 100px;
 	height: auto;
-	object-fit: cover;
+	position: relative;
 	text-align: center;
+	object-fit: cover;
 }
 .services_content_img::after {
-	content: '';
-	display: block;
-	width: 25px;
-	height: 1px;
+	content: "";
 	position: absolute;
-	left: 40%;
-	margin-top: 10px;
-	background: #B8EDF8;
+	bottom: 0;
+	margin-bottom: -10px;
+	border-top: 1px solid #2F56B0;
+	transition: border-color .4s ease-out;
+}
+.services_content_img::after{
+	animation: anchor-underline 2s cubic-bezier(0,.5,0,1) infinite;
+	border-color: #B8EDF8;
 }
 .services_content_title {
 	padding: 35px 0 10px;
@@ -173,14 +297,17 @@ a.logo path {
 	flex-wrap: wrap;
 	margin: 50px 0;
 }
+.portfolio_content.is-visible {
+	animation: fadeInUp 2s forwards;
+}
 .portfolio_content_img {
+	width: calc(33% - 25px);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: calc(33% - 25px);
+	position: relative;
 	margin: 0 25px 25px 0;
 	overflow: hidden;
-	position: relative;
 	background-color: transparent;
 }
 .overlay {
@@ -206,13 +333,16 @@ a.logo path {
 	color: #fff;
 }
 .img {
-	width: 362px;
+	width: 100%;
 	object-fit: cover;
 }
 /*portfolio end*/
 /*about*/
 .aboutme{
 	background: #F1F1F1;
+}
+.aboutme.is-visible {
+	animation: fadeInLeft 2s forwards;
 }
 .about {
 	display: flex;
@@ -255,8 +385,8 @@ a.logo path {
 .about_content {
 	width: calc(50% - 10px);
 	height: 236px;
-	overflow: hidden;
 	font-size: 16px;
+	overflow: hidden;
 	border: none;
 	margin-left: 10px;
 }
@@ -266,69 +396,64 @@ a.logo path {
 /*about end*/
 /*contact*/
 .contact {
-	background-color: #B8EDF8;
 	padding: 50px 0 100px 0;
+	background-color: #B8EDF8;
 }
 .contact_form {
 	max-width: 555px;
-	margin: 57px auto 0;
 	position: relative;
+	margin: 57px auto 0;
 }
-
 .contact_form input, .contact_form textarea{
-    border: 2px solid #333;
     width: 100%;
     padding: 12px 0 12px 28px;
     margin-bottom: 20px;
-}
-::placeholder {
-	color: #989898;
-	font-size: 14px;
+    border: 2px solid #333;
 }
 .send_info {
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 100%;
 }
 .send_info_title {
-	color: #666666;
 	font-size: 14px;
+	color: #666666;
 }
 a.send{
-	background-color: #7EC4CE;
-	padding: 10px;
 	color: #fff;
+	padding: 10px;
+	background-color: #7EC4CE;
 }
 a.send:hover{
+	cursor: pointer;
 	color: #666;
 	animation: fadeIn .5s forwards;
 }
 .modal {
 	display: none;
 }
-
 /* Modal Content */
 .modal-content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
-    background-color: #B8EDF8;
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
+    background-color: #B8EDF8;
     animation: fadeIn .5s forwards;
 }
 /*contact end*/
 /*footer*/
 footer {
-	background-color: #313332;
 	font-size: 14px;
 	color: #fff;
 	padding: 34px 0;
+	background-color: #313332;
 }
 footer .container {
 	display: flex;
@@ -340,30 +465,21 @@ footer img{
 }
 /*scroll to top*/
 .icon-arrow-up {
+	font-size: 15px;
 	font-family: 'icomoon';
-	speak: none;
-	font-style: normal;
-	font-weight: 500;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	font-size: 20px;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 }
 .icon-arrow-up:before {
 	content: "\e900";
 }
 .back-to-top-btn {
+  width: 35px;
+  height: 35px;
   display: none;
   position: fixed;
-  bottom: 20px;
-  right: 10px;
-  width: 50px;
-  height: 50px;
-  background-color: #fff;
+  bottom: 14px;
+  right: 8px;
   color: #333;
-  cursor: pointer;
+  background-color: #fff;
   outline: none;
   border: 3px solid #333;
   border-radius: 50%;
@@ -372,8 +488,9 @@ footer img{
   transition-property: background-color, color;
 }
 .back-to-top-btn:hover, .back-to-top-btn:focus {
-  background-color: #333;
+  cursor: pointer;
   color: #fff;  
+  background-color: #333;
 }
 /* Animations */
 .btnEntrance {
@@ -386,29 +503,8 @@ footer img{
   animation-fill-mode: both;  
   animation-name: btnExit;
 }
-/* btnEntrance */
-@keyframes btnEntrance { 
-	from {
-		opacity: 0;
-		transform: scale3d(0.3, 0.3, 0.3);
-	}
-	to {
-		opacity: 1;
-	}    
-} 
-/* btnExit */
-@keyframes btnExit {
-	from {
-		opacity: 1;
-	}
-	to {
-		opacity: 0;
-		transform: scale3d(0.3, 0.3, 0.3);
-	}
-} 
 /*scroll to top end*/
 /*footer end*/
-
 /*responsive*/
 @media(max-width: 575px){
 	.send_info_title {
@@ -438,8 +534,8 @@ footer img{
 	/*portfolio*/
 	.portfolio_content_img {
 		width: 100%;
-		margin: 0 0 30px 0;
 		align-items: center;
+		margin: 0 0 30px 0;
 	}
 	/*portfolio end*/
 	/*about*/
@@ -465,16 +561,20 @@ footer img{
 }
 @media(max-width: 991px) {
 	/*responsive menu*/
+	header.is-visible {
+		opacity: 1;
+		animation: none;
+	}
 	nav {
 		display: none;
 	}
 	/*toogler with effets*/
 	.navbar-toggler {
+		width: 40px;
+		height: 40px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 40px;
-		height: 40px;
 		color: #fff;
 		border: 2px solid #B8EDF8;
 		outline: none;
@@ -510,9 +610,9 @@ footer img{
 		transition: top .100s ease-in;
 	}
 	nav.open {
-		display: flex;
 		width: 100%;
 		height: calc(100vh - 100px);
+		display: flex;
 		background: #B8EDF8;
 		position: absolute;
 		top: 100px;
@@ -521,11 +621,11 @@ footer img{
 		transition: top .5s ease-out;
 	}
 	.open .header_navigation {
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		width: 100%;
 	}
 	.open .header_navigation a {
 		color: #000;
