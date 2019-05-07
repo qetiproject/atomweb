@@ -13,7 +13,7 @@
 </head>
 <body>
 	<!-- header -->
-	<header>
+	<header class="show-on-scroll">
 		<a href="index.html" class="logo">
 			<svg xmlns="http://www.w3.org/2000/svg" width="162.163" height="32" viewBox="0 0 162.163 32">
 				<g id="Group_78" data-name="Group 78" transform="translate(-5258.25 -3613.5)">
@@ -51,16 +51,17 @@
 	<!-- header end -->
 	<!-- hero section -->
 	<section class="hero">
-		<img class="main_pic" src="assets/images/mainPic.png" alt="mainPic" title="mainPic">
-		<div class="hero_content">
-			<h1 class="hero_title">ვებ დიზაინი და პროგრამირება</h1>
+		<img class="main_pic show-on-scroll" src="assets/images/mainPic.png" alt="mainPic" title="mainPic">
+		<div class="hero_content show-on-scroll">
+			<h1 class="hero_title show-on-scroll"><span>ვებ</span> <span>დიზაინი</span> <span>და</span> <span>პროგრამირება</span></h1>
+			<p class="show-on-scroll">ქეთი ხეცურიანი</p>
 		</div>
 	</section>
 	<!-- hero section end -->
 	<!-- services -->
 	<section id="services" class="services">
-		<h2 class="title">რას ვაკეთებ</h2>
-		<ul class="services_menu">
+		<h2 class="title show-on-scroll">რას ვაკეთებ</h2>
+		<ul class="services_menu show-on-scroll">
 			<li class="services_content">
 				<div class="services_content_img">
 					<img src="assets/images/static/icon1.svg"  alt="icon1" title="icon1">
@@ -94,9 +95,9 @@
 	<!-- services end -->
 	<!-- portfolio -->
 	<section id="portfolio" class="portfolio">
-		<h2 class="title">ჩემი ნამუშევრები</h2>
-		<div class="portfolio_content">
-			<div class="portfolio_content_img">
+		<h2 class="title show-on-scroll">ჩემი ნამუშევრები</h2>
+		<ul class="portfolio_content show-on-scroll">
+			<li class="portfolio_content_img">
 				<img class="img lazy" src="assets/images/img1.png" data-src="assets/images/img1.png" alt="img1" title="img1">
 				<div class="overlay">
 					<div class="content">
@@ -104,8 +105,8 @@
 						<h3><a href="">ვებ სტუდიოს ვებგვერდი</a></h3>
 					</div>
 				</div>
-			</div>
-			<div class="portfolio_content_img">
+			</li>
+			<li class="portfolio_content_img">
 				<img class="img lazy" src="assets/images/img1.png" data-src="assets/images/img2.png" alt="img2" title="img2">
 				<div class="overlay">
 					<div class="content">
@@ -113,8 +114,8 @@
 						<h3><a href="">ვებ სტუდიოს ვებგვერდი</a></h3>
 					</div>
 				</div>
-			</div>
-			<div class="portfolio_content_img">
+			</li>
+			<li class="portfolio_content_img">
 				<img class="img lazy" src="assets/images/img1.png" data-src="assets/images/img3.png" alt="img3" title="img3">
 				<div class="overlay">
 					<div class="content">
@@ -122,8 +123,8 @@
 						<h3><a href="">ვებ სტუდიოს ვებგვერდი</a></h3>
 					</div>
 				</div>
-			</div>
-			<div class="portfolio_content_img">
+			</li>
+			<li class="portfolio_content_img">
 				<img class="img lazy" src="assets/images/img1.png" data-src="assets/images/img1.png" alt="img1" title="img1">
 				<div class="overlay">
 					<div class="content">
@@ -131,8 +132,8 @@
 						<h3><a href="">ვებ სტუდიოს ვებგვერდი</a></h3>
 					</div>
 				</div>
-			</div>
-			<div class="portfolio_content_img ">
+			</li>
+			<li class="portfolio_content_img ">
 				<img class="img lazy" src="assets/images/img1.png" data-src="assets/images/img2.png" alt="img2" title="img2">
 				<div class="overlay">
 					<div class="content">
@@ -140,8 +141,8 @@
 						<h3><a href="">ვებ სტუდიოს ვებგვერდი</a></h3>
 					</div>
 				</div>
-			</div>
-			<div class="portfolio_content_img">
+			</li>
+			<li class="portfolio_content_img">
 				<img class="img lazy" src="assets/images/img1.png" data-src="assets/images/img3.png" alt="img3" title="img3">
 				<div class="overlay">
 					<div class="content">
@@ -149,12 +150,12 @@
 						<h3><a href="">ვებ სტუდიოს ვებგვერდი</a></h3>
 					</div>
 				</div>
-			</div>
-		</div>
+			</li>
+		</ul>
 	</section>
 	<!-- portfolio end -->
 	<!-- about -->
-	<div id="aboutme" class="aboutme">
+	<div id="aboutme" class="aboutme show-on-scroll">
 		<div class="container">
 			<figure class="about">
 				<div class="about_img">
@@ -173,27 +174,27 @@
 	<!-- about -->
 	<!-- contact -->
 	<section id="contact" class="contact">
-		<h2 class="title">კონტაქტი</h2>
+		<h2 class="title show-on-scroll">კონტაქტი</h2>
 		<div class="container">
-		<form class="contact_form" action="#!" method="post">
-			<input type="text" name="user_name" placeholder="სახელი">
-			<input type="email" name="user_mail" placeholder="ელ-ფოსტა">
-			<textarea cols="22" rows="6" placeholder="შეტყობინება"></textarea>
-			<div class="send_info">
-				<h3 class="send_info_title">კითხვებისთვის გამოიყენეთ ფორმა</h3>
-				<a id="myBtn" class="send">გაგზავნა</a>
-			</div>
-			<!-- The Modal -->
-			<div id="myModal" class="modal">
-				<!-- Modal content -->
-				<div class="modal-content">
-					<img src="assets/images/static/check.png" alt="check" title="check">
-					<p>წარმატებით გაიგზავნა</p>
+			<form class="contact_form show-on-scroll" action="#!" method="post">
+				<input type="text" name="user_name" placeholder="სახელი">
+				<input type="email" name="user_mail" placeholder="ელ-ფოსტა">
+				<textarea cols="22" rows="6" placeholder="შეტყობინება"></textarea>
+				<div class="send_info">
+					<h3 class="send_info_title">კითხვებისთვის გამოიყენეთ ფორმა</h3>
+					<a id="myBtn" class="send">გაგზავნა</a>
 				</div>
-			</div>
-			<!-- The Modal End-->
-		</form>
-	</div>
+				<!-- The Modal -->
+				<div id="myModal" class="modal">
+					<!-- Modal content -->
+					<div class="modal-content">
+						<img src="assets/images/static/check.png" alt="check" title="check">
+						<p>წარმატებით გაიგზავნა</p>
+					</div>
+				</div>
+				<!-- The Modal End-->
+			</form>
+		</div>
 	</section>
 	<!-- contact end -->
 	<!-- footer -->
