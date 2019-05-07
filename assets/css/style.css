@@ -420,12 +420,16 @@ a.logo path {
 	font-size: 14px;
 	color: #666666;
 }
-a.send{
+input.send{
+    width: 100px;
+    font-family: bpg_glaho;
+    font-size: 20px;
 	color: #fff;
-	padding: 10px;
-	background-color: #7EC4CE;
+    padding: 10px;
+    background-color: #7EC4CE;
+    border: none;
 }
-a.send:hover{
+input.send:hover{
 	cursor: pointer;
 	color: #666;
 	animation: fadeIn .5s forwards;
